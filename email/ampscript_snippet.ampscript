@@ -1,0 +1,20 @@
+%%[
+  VAR @fname, @email, @bdayToday, @birthdate
+  SET @fname = AttributeValue("FirstName")
+  SET @email = AttributeValue("EmailAddress")
+  SET @birthdate = AttributeValue("Birthday")
+  SET @bdayToday = Format(Now(), "MM-dd")
+
+  IF Format(@birthdate, "MM-dd") == @bdayToday THEN
+]%%
+
+  <p style="font-size:18px;"> Happy Birthday, <b>%%=v(@fname)=%%</b>! </p>
+  <p>We’re so glad to have you as part of our family. As a special gift, here’s a <b>20% discount</b> just for you.</p>
+  <p>Use code: <b>BIRTHDAY20</b> at checkout today!</p>
+  <p>Enjoy your day, %%=v(@fname)=%%! </p>
+
+%%[
+  ELSE
+    RaiseError("Birthday is not today", false)
+  ENDIF
+]%%

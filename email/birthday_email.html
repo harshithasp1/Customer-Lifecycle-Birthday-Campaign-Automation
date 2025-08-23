@@ -1,0 +1,13 @@
+<html>
+  <body style="font-family: Arial, sans-serif;">
+    %%[ 
+      SET @fname = FirstName
+      SET @discount = "20% OFF"
+    ]%%
+    <h1>Happy Birthday, %%=v(@fname)=%%!</h1>
+    <p>We're celebrating with a special treat just for you!</p>
+    <p><strong>Enjoy %%=v(@discount)=%% on your next purchase.</strong></p>
+    <a href="https://example.com/birthday-offer">Claim Your Gift</a>
+    <p>Cheers, <br>Your Brand Team</p>
+  </body>
+</html>
